@@ -1,0 +1,16 @@
+dhori a = 10;
+dhori b = 20;
+dhori result = a + b * 2;
+
+jodi result >= 40 {
+    dekhao("Large");
+}
+nahole {
+    dekhao("Small");
+}
+
+dhori x = 1;
+jotokkhon x <= 3 {
+    dekhao(x);
+    x = x + 1;
+}

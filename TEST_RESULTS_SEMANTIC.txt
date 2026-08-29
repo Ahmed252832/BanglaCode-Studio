@@ -1,0 +1,67 @@
+=== VALID SAMPLE ===
+Lexical analysis: PASS
+Syntax analysis:  PASS
+Semantic analysis: PASS
+
+AST:
+
+Program
+  VariableDeclaration(marks)
+    NumberLiteral(75)
+  VariableDeclaration(bonus)
+    NumberLiteral(5)
+  Assignment(marks)
+    BinaryExpression(+)
+      Identifier(marks)
+      Identifier(bonus)
+  IfStatement
+    Condition
+      BinaryExpression(>=)
+        Identifier(marks)
+        NumberLiteral(40)
+    ThenBlock
+      PrintStatement
+        StringLiteral('Pass')
+    ElseBlock
+      PrintStatement
+        StringLiteral('Fail')
+  VariableDeclaration(x)
+    NumberLiteral(1)
+  WhileStatement
+    Condition
+      BinaryExpression(<=)
+        Identifier(x)
+        NumberLiteral(5)
+    Body
+      PrintStatement
+        Identifier(x)
+      Assignment(x)
+        BinaryExpression(+)
+          Identifier(x)
+          NumberLiteral(1)
+
+Symbol Table:
+  marks           : number
+  bonus           : number
+  x               : number
+
+=== invalid_undeclared.bncode ===
+Semantic Error:
+Undeclared variable: 'x' must be declared with 'dhori' before assignment.
+Undeclared variable: 'x' is used before declaration.
+
+=== invalid_duplicate.bncode ===
+Semantic Error:
+Duplicate declaration: variable 'x' is already declared.
+
+=== invalid_type_mismatch.bncode ===
+Semantic Error:
+Type mismatch: variable 'x' has type number but assignment has type string.
+
+=== invalid_arithmetic_type.bncode ===
+Semantic Error:
+Invalid arithmetic: operator '+' requires number operands, got string and number.
+
+=== invalid_missing_semicolon.bncode ===
+Syntax Error: Expected ';' after declaration at line 2, column 1; found DEKHAO ('dekhao')
+

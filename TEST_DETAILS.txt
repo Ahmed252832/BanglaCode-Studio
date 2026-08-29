@@ -1,0 +1,75 @@
+T01 - Variable declaration and print
+Compiler return code: 0
+Program output: ['10']
+Expected: ['10']
+Result: PASS
+
+
+T02 - Arithmetic expression
+Compiler return code: 0
+Program output: ['20']
+Expected: ['20']
+Result: PASS
+
+
+T03 - Operator precedence with parentheses
+Compiler return code: 0
+Program output: ['30']
+Expected: ['30']
+Result: PASS
+
+
+T04 - If-else statement
+Compiler return code: 0
+Program output: ['Pass']
+Expected: ['Pass']
+Result: PASS
+
+
+T05 - While loop
+Compiler return code: 0
+Program output: ['1', '2', '3']
+Expected: ['1', '2', '3']
+Result: PASS
+
+
+T06 - Boolean literal print
+Compiler return code: 0
+Program output: ['shotto']
+Expected: ['shotto']
+Result: PASS
+
+
+T07 - Undeclared variable error
+Expected error contains: Undeclared variable
+Compiler output:
+Semantic Error:
+Undeclared variable: 'x' must be declared with 'dhori' before assignment.
+
+Result: PASS
+
+
+T08 - Duplicate declaration error
+Expected error contains: Duplicate declaration
+Compiler output:
+Semantic Error:
+Duplicate declaration: variable 'x' is already declared.
+
+Result: PASS
+
+
+T09 - Type mismatch error
+Expected error contains: Type mismatch
+Compiler output:
+Semantic Error:
+Type mismatch: variable 'x' has type number but assignment has type string.
+
+Result: PASS
+
+
+T10 - Missing semicolon syntax error
+Expected error contains: Expected ';'
+Compiler output:
+Syntax Error: Expected ';' after declaration at line 2, column 1; found DEKHAO ('dekhao')
+
+Result: PASS

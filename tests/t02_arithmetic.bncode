@@ -1,0 +1,4 @@
+dhori a = 10;
+dhori b = 5;
+dhori result = a + b * 2;
+dekhao(result);

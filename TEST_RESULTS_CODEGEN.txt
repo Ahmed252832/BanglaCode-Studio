@@ -1,0 +1,101 @@
+COMPILER OUTPUT
+===============
+Lexical analysis:  PASS
+Syntax analysis:   PASS
+Semantic analysis: PASS
+IR generation:     PASS
+C code generation: PASS
+Generated C file:  ir_demo.c
+
+AST:
+
+Program
+  VariableDeclaration(a)
+    NumberLiteral(10)
+  VariableDeclaration(b)
+    NumberLiteral(20)
+  VariableDeclaration(result)
+    BinaryExpression(+)
+      Identifier(a)
+      BinaryExpression(*)
+        Identifier(b)
+        NumberLiteral(2)
+  IfStatement
+    Condition
+      BinaryExpression(>=)
+        Identifier(result)
+        NumberLiteral(40)
+    ThenBlock
+      PrintStatement
+        StringLiteral('Large')
+    ElseBlock
+      PrintStatement
+        StringLiteral('Small')
+  VariableDeclaration(x)
+    NumberLiteral(1)
+  WhileStatement
+    Condition
+      BinaryExpression(<=)
+        Identifier(x)
+        NumberLiteral(3)
+    Body
+      PrintStatement
+        Identifier(x)
+      Assignment(x)
+        BinaryExpression(+)
+          Identifier(x)
+          NumberLiteral(1)
+
+Symbol Table:
+  a               : number
+  b               : number
+  result          : number
+  x               : number
+
+Three-Address Code (TAC):
+
+001: a = 10
+002: b = 20
+003: t1 = b * 2
+004: t2 = a + t1
+005: result = t2
+006: t3 = result >= 40
+007: IF_FALSE t3 GOTO L1
+008: PRINT "Large"
+009: GOTO L2
+010: L1:
+011: PRINT "Small"
+012: L2:
+013: x = 1
+014: L3:
+015: t4 = x <= 3
+016: IF_FALSE t4 GOTO L4
+017: PRINT x
+018: t5 = x + 1
+019: x = t5
+020: GOTO L3
+021: L4:
+
+GCC build: PASS
+Executable: ir_demo
+
+STDERR
+======
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+
+
+PROGRAM OUTPUT
+==============
+Large
+1
+2
+3

@@ -1,0 +1,41 @@
+Parse successful!
+
+Program
+  VariableDeclaration(marks)
+    NumberLiteral(75)
+  VariableDeclaration(bonus)
+    NumberLiteral(5)
+  Assignment(marks)
+    BinaryExpression(+)
+      Identifier(marks)
+      Identifier(bonus)
+  IfStatement
+    Condition
+      BinaryExpression(>=)
+        Identifier(marks)
+        NumberLiteral(40)
+    ThenBlock
+      PrintStatement
+        StringLiteral('Pass')
+    ElseBlock
+      PrintStatement
+        StringLiteral('Fail')
+  VariableDeclaration(x)
+    NumberLiteral(1)
+  WhileStatement
+    Condition
+      BinaryExpression(<=)
+        Identifier(x)
+        NumberLiteral(5)
+    Body
+      PrintStatement
+        Identifier(x)
+      Assignment(x)
+        BinaryExpression(+)
+          Identifier(x)
+          NumberLiteral(1)
+
+
+INVALID TEST
+============
+Syntax Error: Expected ';' after declaration at line 2, column 1; found DEKHAO ('dekhao')

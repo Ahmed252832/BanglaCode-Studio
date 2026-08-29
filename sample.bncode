@@ -1,0 +1,18 @@
+// BanglaCode v1.0 sample program
+
+dhori marks = 75;
+dhori bonus = 5;
+marks = marks + bonus;
+
+jodi marks >= 40 {
+    dekhao("Pass");
+}
+nahole {
+    dekhao("Fail");
+}
+
+dhori x = 1;
+jotokkhon x <= 5 {
+    dekhao(x);
+    x = x + 1;
+}

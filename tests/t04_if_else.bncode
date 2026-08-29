@@ -1,0 +1,7 @@
+dhori marks = 75;
+jodi marks >= 40 {
+    dekhao("Pass");
+}
+nahole {
+    dekhao("Fail");
+}

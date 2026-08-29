@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.exe
+*.o
+*.c
+
+_studio_temp.bncode
+_gui_temp.bncode
+_studio_temp.c
+_gui_temp.c
+_studio_temp
+_gui_temp

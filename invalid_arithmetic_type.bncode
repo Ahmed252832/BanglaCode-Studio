@@ -1,0 +1,2 @@
+dhori name = "Rahim";
+dhori y = name + 5;

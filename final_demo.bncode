@@ -1,0 +1,20 @@
+// BanglaCode v1.0 Final Demo
+dhori marks = 75;
+dhori bonus = 5;
+dhori finalMarks = marks + bonus;
+
+dekhao("BanglaCode Demo");
+dekhao(finalMarks);
+
+jodi finalMarks >= 40 {
+    dekhao("Pass");
+}
+nahole {
+    dekhao("Fail");
+}
+
+dhori count = 1;
+jotokkhon count <= 3 {
+    dekhao(count);
+    count = count + 1;
+}
